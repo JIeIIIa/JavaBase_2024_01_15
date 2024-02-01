@@ -1,6 +1,7 @@
 package com.gmail.onishchenko.lecture06;
 
 public class Lecture06 {
+
     public static void main(String[] args) {
         int a = 10;
         int b = 3;
