@@ -4,7 +4,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Lecture09Demo {
     public static void main(String[] args) {
-//        int[] array = {1, 5, 3, 6, 0, 1, -10};
+//        bubbleSoretDemo();
+        task1();
+    }
+
+    private static void bubbleSoretDemo() {
+        //        int[] array = {1, 5, 3, 6, 0, 1, -10};
         int[] array = generate(100);
         System.out.println("Original array: ");
         print(array);
@@ -28,7 +33,7 @@ public class Lecture09Demo {
     public static void bubbleSortVersion2(int[] array) {
         int count = 0;
         for (int i = 0; i <= array.length; i++) {
-            for (int j = 0; j < array.length - 1  ; j++) {
+            for (int j = 0; j < array.length - 1; j++) {
                 count++;
                 if (array[j] > array[j + 1]) {
                     swap(array, j);
@@ -42,6 +47,7 @@ public class Lecture09Demo {
         for (int element : array) {
             System.out.print(element + ", ");
         }
+        System.out.println();
     }
 
     public static int[] generate(int size) {
@@ -55,7 +61,7 @@ public class Lecture09Demo {
 
     public static void bubbleSortReverse(int[] array) {
         for (int i = array.length - 1; i >= 0; i--) {
-            for (int j = 0; j < array.length - 1  ; j++) {
+            for (int j = 0; j < array.length - 1; j++) {
                 if (array[j] < array[j + 1]) {
                     swap(array, j);
                 }
@@ -69,14 +75,27 @@ public class Lecture09Demo {
         array[i + 1] = tmp;
     }
 
+    private static void swapPair(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+
 
     /**
      * a. Задати масив цілих чисел довжини N елементів та заповнити його рандомними числами
      * відсортувати масив та вивести на екран. Поміняти місцями перший та останній елемент, вивести масив на екран ще раз.
      */
     public static void task1() {
-
+        int size = 10;
+        int[] array = generate(size);
+        print(array);
+        bubbleSortVersion2(array);
+        print(array);
+        swapPair(array, 0, array.length - 1);
+        print(array);
     }
+
 
     /**
      * Створити масив з рендомних чисел довжини N (N вводимо з консолі; N має бути парним числом)
@@ -85,5 +104,7 @@ public class Lecture09Demo {
      * Відсортувати другу частину масивав за спаданням і також вивести на екран
      */
     public static void task2() {
+        int n = 10;
+        int size = 2 * n;
     }
 }
