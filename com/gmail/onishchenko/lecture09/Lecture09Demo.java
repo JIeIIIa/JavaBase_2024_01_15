@@ -1,14 +1,16 @@
 package com.gmail.onishchenko.lecture09;
 
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Lecture09Demo {
     public static void main(String[] args) {
 //        bubbleSoretDemo();
-        task1();
+//        task1();
+        task2();
     }
 
-    private static void bubbleSoretDemo() {
+    private static void bubbleSoreDemo() {
         //        int[] array = {1, 5, 3, 6, 0, 1, -10};
         int[] array = generate(100);
         System.out.println("Original array: ");
@@ -104,7 +106,63 @@ public class Lecture09Demo {
      * Відсортувати другу частину масивав за спаданням і також вивести на екран
      */
     public static void task2() {
-        int n = 10;
-        int size = 2 * n;
+        System.out.print("Enter array size: ");
+//        int size = readOddInt();
+        int size = 20;
+        System.out.println("\nUSE PREDEFINED VALUE: " + size);
+
+        int[] array = generate(size);
+        System.out.println("Generated array:");
+        print(array);
+        System.out.println("Sort ascending (the first part):");
+        bubbleSort(array, 0, array.length / 2);
+        print(array);
+        System.out.println("Sort descending (the second part):");
+        bubbleSortReverse(array, array.length / 2, array.length);
+        print(array);
+    }
+
+    private static int readOddInt() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            if (scanner.hasNextInt()) {
+                int number = scanner.nextInt();
+                if (number > 0 && number % 2 == 0) {
+                    return number;
+                }
+            }
+            System.out.println("Enter an odd number");
+            scanner.nextLine();
+        }
+    }
+
+    public static void bubbleSort(int[] array, int minIndex, int maxIndex) {
+
+        for (int j = minIndex; j < maxIndex - 1; j++) {
+            for (int i = minIndex; i < maxIndex - j - 1; i++) {
+                int tmp;
+                if (array[i] > array[i + 1]) {
+                    tmp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = tmp;
+                }
+            }
+
+        }
+    }
+
+    public static void bubbleSortReverse(int[] array, int minIndex, int maxIndex) {
+
+        for (int j = 0; j < maxIndex - minIndex - 1; j++) {
+            for (int i = minIndex; i < maxIndex - 1; i++) {
+                int tmp;
+                if (array[i] < array[i + 1]) {
+                    tmp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = tmp;
+                }
+            }
+
+        }
     }
 }
