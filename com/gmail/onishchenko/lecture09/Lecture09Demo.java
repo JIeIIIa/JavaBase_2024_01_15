@@ -1,5 +1,6 @@
 package com.gmail.onishchenko.lecture09;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -112,14 +113,14 @@ public class Lecture09Demo {
         System.out.println("\nUSE PREDEFINED VALUE: " + size);
 
         int[] array = generate(size);
-        System.out.println("Generated array:");
-        print(array);
+        System.out.print("Generated array ");
+        System.out.println("is " + Arrays.toString(array));
         System.out.println("Sort ascending (the first part):");
-        bubbleSort(array, 0, array.length / 2);
-        print(array);
+        Arrays.sort(array, 0, array.length / 2);
+        System.out.println(Arrays.toString(array));
         System.out.println("Sort descending (the second part):");
         bubbleSortReverse(array, array.length / 2, array.length);
-        print(array);
+        System.out.println(Arrays.toString(array));
     }
 
     private static int readOddInt() {
