@@ -12,6 +12,11 @@ public class Lecture09Demo {
         System.out.println("\nSorted array:   ");
         print(array);
 
+
+        System.out.println();
+        byte number = -128;
+        number--;
+        System.out.println("Number: " + number);
     }
 
 //    1, 5, 3, 6, 0, 1, -10
@@ -22,7 +27,7 @@ public class Lecture09Demo {
 
     public static void bubbleSortVersion2(int[] array) {
         int count = 0;
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i <= array.length; i++) {
             for (int j = 0; j < array.length - 1  ; j++) {
                 count++;
                 if (array[j] > array[j + 1]) {
@@ -49,7 +54,13 @@ public class Lecture09Demo {
     }
 
     public static void bubbleSortReverse(int[] array) {
-
+        for (int i = array.length - 1; i >= 0; i--) {
+            for (int j = 0; j < array.length - 1  ; j++) {
+                if (array[j] < array[j + 1]) {
+                    swap(array, j);
+                }
+            }
+        }
     }
 
     private static void swap(int[] array, int i) {
