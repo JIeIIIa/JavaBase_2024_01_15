@@ -34,15 +34,3 @@ public class Shape {
     }
 }
 
-class ShapeRunner {
-    public static void main(String[] args) {
-        Shape shape = new Shape();
-        shape.name = "Abstract shape";
-        shape.color = "black";
-        System.out.println("Shape is created with name " + shape.name);
-
-        Shape anotherShape = new Shape("PrettyShape", "green", 42);
-        System.out.println("Shape is created with name " + anotherShape.name);
-        anotherShape.greeting();
-    }
-}
