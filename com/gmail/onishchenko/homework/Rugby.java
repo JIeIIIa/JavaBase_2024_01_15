@@ -4,6 +4,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Rugby {
     public static void main(String[] args) {
+        betterApproach();
+        anotherApproach();
+    }
+
+    private static void betterApproach() {
         int playerCount = 25;
         int[] firstTeamAges = generatePlayerAges(playerCount);
         int[] secondTeamAges = generatePlayerAges(playerCount);
@@ -18,6 +23,23 @@ public class Rugby {
         System.out.printf("Average age of the first team is %.2f\n", firstTeamAverageAge);
         double secondTeamAverageAge = averageAge(firstTeamAges);
         System.out.printf("Average age of the second team is %.2f\n", secondTeamAverageAge);
+    }
+
+    private static void anotherApproach() {
+        int firstSum = 0;
+        int secondSum = 0;
+        for (int i = 0; i < 25; i++) {
+            int age = ThreadLocalRandom.current().nextInt(18, 40);
+            firstSum += age;
+            System.out.print(age + "\t");
+
+            age = ThreadLocalRandom.current().nextInt(18, 40);
+            secondSum += age;
+            System.out.println(age);
+        }
+
+        System.out.printf("Average age of the first team is %.2f\n", firstSum / 25.0);
+        System.out.printf("Average age of the first team is %.2f\n", secondSum / 25.0);
     }
 
     private static double averageAge(int[] ages) {
