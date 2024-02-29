@@ -25,5 +25,10 @@ public class SmartphoneRunner {
         ((LinuxOS)smartphones[3]).disableRootMode();
 
         ((IOs)smartphones[2]).askSiri("To be or not to be?");
+        cast(smartphones);
+    }
+
+    public static void cast(Smartphones[] smartphones) {
+        ((LinuxOS)smartphones[2]).disableRootMode();
     }
 }
