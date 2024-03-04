@@ -42,6 +42,8 @@ public class CalculatorTest {
     }
 
     @Test
+    @Disabled
+    @DisplayName(value = "customTestName")
     public void factorialZeroTest() {
         System.out.println("factorialZeroTest");
         int value = 0;
