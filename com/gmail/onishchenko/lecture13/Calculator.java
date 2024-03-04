@@ -9,6 +9,9 @@ public class Calculator {
 
     public long factorial(int value) {
         int result = 1;
+        if (value < 0) {
+            return -1;
+        }
         for (int i = 1; i <= value; i++) {
             result *= i;
         }
