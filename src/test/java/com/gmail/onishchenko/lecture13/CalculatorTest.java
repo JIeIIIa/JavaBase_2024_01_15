@@ -1,6 +1,5 @@
 package com.gmail.onishchenko.lecture13;
 
-import com.gmail.onishchenko.lecture13.Calculator;
 import org.junit.jupiter.api.*;
 
 public class CalculatorTest {
