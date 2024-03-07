@@ -1,16 +1,27 @@
 package com.gmail.onishchenko.lecture15;
 
-import java.util.Objects;
-
 public class DayOfWeek {
     public static void main(String[] args) {
         DayOfWeek dayOfWeek = new DayOfWeek();
-        String result = dayOfWeek.recommendation(Day.MONDAY);
+        Day day = Day.MONDAY;
+        String result = dayOfWeek.recommendation(day);
 
-        System.out.printf("Recommendation is '%s'", result);
+        System.out.printf("Recommendation is '%s'\n", result);
+        System.out.println(Day.MONDAY.getName());
+
+        Day anotherDay = Day.valueOf("MONDAY");
+        System.out.println(anotherDay);
     }
 
     public String recommendation(Day day) {
+        switch (day) {
+            case MONDAY: {
+
+            }
+            case SUNDAY: {
+                break;
+            }
+        }
         if (Day.MONDAY.equals(day)) {
             return "go to work!";
         } else {
@@ -21,34 +32,22 @@ public class DayOfWeek {
 }
 
 
-class Day {
-    public static final Day MONDAY = new Day("Monday");
-    public static final Day SUNDAY = new Day("Sunday");
+enum Day {
+    MONDAY("Monday"),
+    SUNDAY("Sunday"),
+    UNKNOWN();
 
     private final String name;
 
-    private Day(String name) {
+    Day(String name) {
         this.name = name;
+    }
+
+    Day() {
+        this.name = "UNKNOWN";
     }
 
     public String getName() {
         return name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Day day = (Day) o;
-        return name != null && name.equalsIgnoreCase(day.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
     }
 }
