@@ -7,16 +7,23 @@ public class Calculator {
         return result;
     }
 
+    // n! = 1 * 2 * 3 * 4 * ... * (n-1) * n =  (n-1)! * n
+    // (n-1)!  = 1 * 2 * 3 * 4 * ... * (n-1)
     public long factorial(int value) {
-        int result = 1;
-        if (value < 0) {
-            return -1;
-        }
-        for (int i = 1; i <= value; i++) {
-            result *= i;
+        if (value == 1) {
+            System.out.println("1! == 1");
+            return 1;
         }
 
-        this.result = result;
-        return this.result;
+        System.out.println("value is " + value);
+        return factorial(value - 1) * value;
+    }
+
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+
+        long result = calculator.factorial(3);
+
+        System.out.println(result);
     }
 }
