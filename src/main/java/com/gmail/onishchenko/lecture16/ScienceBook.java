@@ -1,10 +1,18 @@
 package com.gmail.onishchenko.lecture16;
 
-public class ScienceBook {
+public abstract class ScienceBook {
     private String name;
+
+    public ScienceBook() {
+        name = "default name";
+    }
 
     public ScienceBook(String name) {
         this.name = name;
+    }
+
+    public void info() {
+        System.out.println("I'm a book: " + name);
     }
 
     @Override
