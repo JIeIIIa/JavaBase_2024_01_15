@@ -9,6 +9,29 @@ public class NestedClassesDemo {
         Page page = book.new Page(1);
         System.out.println(page);
         page.info(42);
+
+
+
+        class People {
+            private String ticketNumber;
+
+            void demo() {
+                System.out.println("I want a book: " + book);
+            }
+
+            @Override
+            public String toString() {
+                return "People{" +
+                        "ticketNumber='" + ticketNumber + '\'' +
+                        '}';
+            }
+        }
+
+//        book = new ScienceBook("another");
+
+        People people = new People();
+        System.out.println(people);
+        people.demo();
     }
 
     private static void staticNestedClass() {
