@@ -11,6 +11,18 @@ public class DayOfWeek {
 
         Day anotherDay = Day.valueOf("MONDAY");
         System.out.println(anotherDay);
+
+        System.out.println(" -= VALUE OF =-");
+        Day[] days = Day.values();
+        for (int i = 0; i < days.length; i++) {
+            System.out.println(days[i]);
+        }
+
+        System.out.println("Current day");
+        for (Day currentDay : days) {
+            System.out.println(currentDay);
+        }
+
     }
 
     public String recommendation(Day day) {
