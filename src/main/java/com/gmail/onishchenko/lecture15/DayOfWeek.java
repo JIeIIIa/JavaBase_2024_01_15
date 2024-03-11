@@ -1,13 +1,15 @@
 package com.gmail.onishchenko.lecture15;
 
+import static com.gmail.onishchenko.lecture15.Day.MONDAY;
+
 public class DayOfWeek {
     public static void main(String[] args) {
         DayOfWeek dayOfWeek = new DayOfWeek();
-        Day day = Day.MONDAY;
+        Day day = MONDAY;
         String result = dayOfWeek.recommendation(day);
 
         System.out.printf("Recommendation is '%s'\n", result);
-        System.out.println(Day.MONDAY.getName());
+        System.out.println(MONDAY.getName());
 
         Day anotherDay = Day.valueOf("MONDAY");
         System.out.println(anotherDay);
@@ -52,7 +54,7 @@ public class DayOfWeek {
                 break;
             }
         }
-        if (Day.MONDAY.equals(day)) {
+        if (MONDAY.equals(day)) {
             return "go to work!";
         } else {
             return "You may sleep all day)";
