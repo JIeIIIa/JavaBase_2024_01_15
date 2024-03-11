@@ -21,8 +21,20 @@ public class DayOfWeek {
         System.out.println("Current day");
         for (Day currentDay : days) {
             System.out.println(currentDay);
+            System.out.println("name of current day: " + currentDay.name());
         }
 
+        convert();
+    }
+
+    private static void convert() {
+        System.out.println(" -= Convert from String =-");
+
+        String value = "MONDAY";
+        Day result = Day.convertFrom(value);
+        System.out.println(result);
+        Day resultByValueOF = Day.valueOf(value);
+        System.out.println("Result by value of: " + resultByValueOF);
     }
 
     public String recommendation(Day day) {
@@ -62,4 +74,15 @@ enum Day {
     public String getName() {
         return name;
     }
+
+    public static Day convertFrom(String value) {
+        for (Day day : values()) {
+            if (day.name().equalsIgnoreCase(value)) {
+                return day;
+            }
+        }
+
+        return UNKNOWN;
+    }
+
 }
