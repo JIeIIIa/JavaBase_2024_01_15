@@ -49,23 +49,13 @@ public class NestedClassesDemo {
         ScienceBook coloredBook = new ScienceBook() {
             @Override
             public void info() {
-                System.out.println("inside anonymous class");;
+                System.out.println("inside anonymous class");
+                ;
             }
         };
         coloredBook.info();
 
-        Info info = new Info() {
-
-            @Override
-            public void info() {
-                System.out.println("Info method implementation");
-            }
-
-            @Override
-            public void describe() {
-                System.out.println("describe method implementation");
-            }
-        };
+        Info info = () -> System.out.println("describe method implementation");
 
         info.describe();
 
@@ -79,6 +69,6 @@ public class NestedClassesDemo {
 }
 
 interface Info {
-    void info();
+    //    void info();
     void describe();
 }
