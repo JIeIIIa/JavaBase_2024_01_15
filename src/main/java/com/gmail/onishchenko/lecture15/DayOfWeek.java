@@ -18,11 +18,17 @@ public class DayOfWeek {
             System.out.println(days[i]);
         }
 
-        System.out.println("Current day");
+        System.out.println();
+        System.out.println();
+        System.out.println("Current days");
         for (Day currentDay : days) {
             System.out.println(currentDay);
             System.out.println("name of current day: " + currentDay.name());
+            System.out.printf("Index of %s: %d\n", currentDay, currentDay.ordinal());
         }
+        System.out.println();
+        System.out.println();
+
 
         convert();
     }
@@ -85,4 +91,9 @@ enum Day {
         return UNKNOWN;
     }
 
+
+    @Override
+    public String toString() {
+        return "Day is " + name();
+    }
 }
