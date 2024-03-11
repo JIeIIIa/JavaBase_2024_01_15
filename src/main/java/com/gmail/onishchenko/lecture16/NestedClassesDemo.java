@@ -8,7 +8,7 @@ public class NestedClassesDemo {
         ScienceBook book = new ScienceBook("physics");
         Page page = book.new Page(1);
         System.out.println(page);
-        page.info();
+        page.info(42);
     }
 
     private static void staticNestedClass() {
