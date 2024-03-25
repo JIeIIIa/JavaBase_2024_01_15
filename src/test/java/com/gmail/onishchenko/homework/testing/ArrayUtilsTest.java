@@ -1,6 +1,5 @@
-package com.gmail.onishchenko.homeworks.testing;
+package com.gmail.onishchenko.homework.testing;
 
-import com.gmail.onishchenko.homework.testing.ArrayUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
